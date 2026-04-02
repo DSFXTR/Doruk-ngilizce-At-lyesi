@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doruk İngilizce Öğrenme Merkezi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; background: #f0f4f8; color: #333; line-height: 1.6; }
+        
+        /* Navigasyon Çubuğu */
+        nav { background: #2d3436; color: white; padding: 1rem; text-align: center; }
+        nav h1 { font-size: 1.5rem; letter-spacing: 2px; }
+
+        /* Ana Bölüm (Hero) */
+        .hero { 
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe); 
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center;
+        }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        /* Ana İçerik Kaplayıcı */
+        .container { max-width: 800px; margin: -40px auto 40px; padding: 20px; }
+
+        .card { 
+            background: white; 
+            border-radius: 15px; 
+            padding: 30px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            text-align: center;
+        }
+
+        /* Test Bölümü */
+        .quiz-box { margin-top: 20px; }
+        input { 
+            padding: 12px; 
+            width: 80%; 
+            border: 2px solid #dfe6e9; 
+            border-radius: 8px; 
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        button { 
+            background: #00b894; 
+            color: white; 
+            border: none; 
+            padding: 12px 30px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            transition: 0.3s;
+        }
+        button:hover { background: #009475; transform: scale(1.05); }
+
+        #result { margin-top: 15px; font-weight: bold; }
+        
+        footer { text-align: center; padding: 20px; color: #636e72; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h1>DORUK ENGLISH CENTER</h1>
+</nav>
+
+<div class="hero">
+    <h2>Geleceği İngilizce ile İnşa Et!</h2>
+    <p>En kolay ve eğlenceli öğrenme platformuna hoş geldin.</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h3>🎯 Kelime Avcısı (Hızlı Test)</h3>
+        <p style="margin-bottom: 15px;">Aşağıdaki kelimenin anlamını biliyor musun?</p>
+        
+        <div class="quiz-box">
+            <h1 id="question-word" style="color: #6c5ce7; margin-bottom: 15px;">"GOAL"</h1>
+            <input type="text" id="user-answer" placeholder="Türkçesini yazın...">
+            <br>
+            <button onclick="checkAnswer()">Cevabı Kontrol Et</button>
+            <p id="result"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Doruk İngilizce Öğrenme Merkezi - Tüm Hakları Saklıdır.
+</footer>
+
+<script>
+    function checkAnswer() {
+        const answer = document.getElementById('user-answer').value.toLowerCase().trim();
+        const result = document.getElementById('result');
+        
+        // "Hedef" veya "Gol" cevaplarını doğru kabul edelim
+        if (answer === "hedef" || answer === "gol") {
+            result.innerText = "⭐ Harikasın! Doğru cevap.";
+            result.style.color = "#00b894";
+        } else {
+            result.innerText = "❌ Henüz değil, tekrar dene!";
+            result.style.color = "#d63031";
+        }
+    }
+</script>
+
+</body>
+</html>
